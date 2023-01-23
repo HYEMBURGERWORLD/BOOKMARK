@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입페이지</title>
+</head>
+<body>
+  <main>
+
+    <form action="" id="userForm">
+      <div class="">
+        <label for="userId">아이디</label>
+        <input type="text" id="userId" minlength="4" maxlength="8" placeholder="최소4자 최대8자" autocomplete="off" required />
+        <span id="checkId"></span>
+      </div>
+  
+      <div class="">
+        <label for="userPw">비밀번호</label>
+        <input type="text" id="userPw" minlength="6" placeholder="최소6자" autocomplete="off" required />
+      </div>
+  
+      <div class="">
+        <label for="userPw">비밀번호확인</label>
+        <input type="text" id="userPwCheck" minlength="6" placeholder="한 번 더 입력하세요!" autocomplete="off" required />
+        <span id="checkPw"></span>
+      </div>
+  
+      <div class="">
+        <label for="userName">닉네임</label>
+        <input type="text" id="userName" maxlength="8" placeholder="최대8자" autocomplete="off" required />
+      </div>
+  
+      <div class="">
+        <label for="userBirth">생일</label>
+        <input type="text" id="userBirth" placeholder="ex)1월 1일 0101" maxlength="4" autocomplete="off" required />
+      </div>
+  
+      <button>회원가입</button>
+    </form>
+
+  </main>
+
+  <script type="text/javascript" src="js/user.js"></script>
+</body>
+</html>
