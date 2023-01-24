@@ -5,15 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>welcome to my bookmark !!</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <form id="loginForm">
-    <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
-    <input type="text" id="pwInput" placeholder="비밀번호" autocomplete="off" />
-    <button>로그인</button>
-  </form>
-  <a href="signup.html">회원가입</a>
+  <nav>
+    <h1>bookmark</h1>
+    <span id="greetingSpan"></span>
+    <div id="loginBox">
+      <form id="loginForm">
+        <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
+        <input type="text" id="pwInput" placeholder="비밀번호" autocomplete="off" />
+        <button>로그인</button>
+      </form>
+      <a href="signup.html">회원가입</a>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <form action="" id="recordForm">
+        <label for="recordArea">인상깊은 구절을 남기세요 : </label>
+        <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
+        <div class="btnBox"><!--여기에 width값주고-->
+          <input type="text" id="recordSource" placeholder="책이름" required /> <!--부모요소 width 값의 ~%씩-->
+          <button>기록</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <ul id="recordList">
+
+      </ul>
+    </section>
+  </main>
 
   <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/record.js"></script>
 </body>
 </html>

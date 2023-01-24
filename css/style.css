@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+}
+
+label {
+  display: block;
+}

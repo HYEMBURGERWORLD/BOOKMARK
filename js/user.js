@@ -14,7 +14,7 @@ function checkId() {
   if (user.id === userId.value) {
     checkIdSpan.innerText = "중복된 아이디입니다.";
   } else if (userId.value.match(reg)) {
-    checkIdSpan.innerText = "_를 제외한 특수문자는 사용할 수 없습니다.";
+    checkIdSpan.innerText = "한글 / 영어 / 숫자 / _만 사용 가능합니다";
   } else {
     checkIdSpan.innerText = PASSID_KEY;
     return PASSID_KEY;
@@ -31,22 +31,25 @@ function checkPw() {
   }
 }
 
-function saveUserInfo() {
+function saveUserInfo(e) {
+  e.preventDefault();
+
   const idCheck = checkId();
   const pwCheck = checkPw();
-  const userObj = {};
 
   if (idCheck === PASSID_KEY && pwCheck === PASSPW_KEY) {
     const userName = document.querySelector("#userName");
     const userBirth = document.querySelector("#userBirth");
 
-    userObj.id = userId.value;
-    userObj.pw = userPw.value;
-    userObj.name = userName.value;
-    userObj.userBirth = userBirth.value;
+    const userObj = {
+      id: userId.value,
+      pw: userPw.value,
+      name: userName.value,
+      birth: userBirth.value,
+    };
+
     localStorage.setItem("user", JSON.stringify(userObj));
-    alert("회원가입이 완료되었습니다!");
-    window.location.assign("index.html");
+    location.assign("index.html");
   } else {
     alert("아이디나 비밀번호를 확인하세요.");
   }
