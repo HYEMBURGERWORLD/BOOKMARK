@@ -28,6 +28,8 @@ function saveRecord(e) {
 
 function seeRecord(recordValue) {
   console.log(recordValue.text);
+  console.log(recordValue.source);
+  console.log(recordValue.date);
 }
 
 recordForm.addEventListener("submit", saveRecord);
