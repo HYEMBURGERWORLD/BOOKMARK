@@ -2,6 +2,10 @@
   display: none;
 }
 
+.block {
+  display: block;
+}
+
 textarea {
   resize: none;
   padding: 10px;

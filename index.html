@@ -22,39 +22,22 @@
   </nav>
 
   <main>
-    <section>
-      <form action="" id="recordForm">
-        <label for="recordArea">인상깊은 구절을 남기세요 : </label>
-        <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
-        <div class="btnBox"><!--여기에 width값주고-->
-          <input type="text" id="recordSource" placeholder="책이름" required /> <!--부모요소 width 값의 ~%씩-->
-          <button>기록</button>
-        </div>
-      </form>
-    </section>
-
-    <section>
-      <ul id="recordList">
-        <li>
-          <ul>
-            <div class="">
-              <span></span>
-            </div>
-            <div class="">
-              <div class="">
-                <span></span>
-              </div>
-              <div class="">
-                <span></span>
-              </div>
-              <div class="">
-                <span></span>
-              </div>
-            </div>
-          </ul>
-        </li>
-      </ul>
-    </section>
+    <article>
+      <section>
+        <form action="" id="recordForm">
+          <label for="recordArea">인상깊은 구절을 남기세요 : </label>
+          <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
+          <div class="btnBox"><!--여기에 width값주고-->
+            <input type="text" id="recordSource" placeholder="책이름" autocomplete="off" required /> <!--부모요소 width 값의 ~%씩-->
+            <button id="recordBtn">기록</button>
+          </div>
+        </form>
+      </section>
+  
+      <section>
+        <ul id="recordList"></ul>
+      </section>
+    </article>
   </main>
 
   <script type="text/javascript" src="js/login.js"></script>
