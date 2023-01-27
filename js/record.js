@@ -1,29 +1,37 @@
 const recordForm = document.querySelector("#recordForm");
 const recordArea = document.querySelector("#recordArea");
 const recordSource = document.querySelector("#recordSource");
+const hiddenId = document.querySelector("#recordId");
 
 let recordArr = [];
 
+// 로컬스토리지가 비어있지 않다면! 바로 출력한다.
+const getRecord = JSON.parse(localStorage.getItem("record"));
+if (getRecord !== null) {
+  recordArr = getRecord;
+  getRecord.forEach(seeRecord);
+}
+
+// 저장
 function saveRecord(e) {
   e.preventDefault();
 
   const date = new Date();
-  const id = Date.now();
+  const recordObj = {
+    text: recordArea.value,
+    source: recordSource.value,
+    date: `${date.getFullYear()}년${
+      date.getMonth() + 1
+    }월${date.getDate()}일 ${date.getHours()}:${date.getMinutes()}`,
+    id: Date.now(),
+  };
 
-  if (recordArea.value !== "") {
-    const recordObj = {
-      text: recordArea.value,
-      source: recordSource.value,
-      date: date,
-      id: id,
-    };
+  recordArr.push(recordObj);
+  setRecord();
 
-    recordArr.push(recordObj);
-    setRecord();
-    recordArea.value = "";
-    recordSource.value = "";
-    seeRecord(recordObj);
-  }
+  recordArea.value = "";
+  recordSource.value = "";
+  seeRecord(recordObj);
 }
 
 // 같은 게 두 번 쓰여서 function으로 뺐다.
@@ -31,7 +39,7 @@ function setRecord() {
   localStorage.setItem("record", JSON.stringify(recordArr));
 }
 
-// 복수 node 추가
+// 보기
 function seeRecord(recordValue) {
   const li = document.createElement("li");
   const recordList = document.querySelector("#recordList");
@@ -55,25 +63,54 @@ function seeRecord(recordValue) {
     button.appendChild(textNode);
     newLi.appendChild(button);
     button.classList.add(text);
+
+    button.addEventListener("click", whatBtn);
   });
+}
 
-  const modBtn = document.querySelector(".mod");
-  const delBtn = document.querySelector(".del");
-
-  modBtn.addEventListener("click", modRecord);
-  delBtn.addEventListener("click", delRecord);
+function whatBtn(e) {
+  const btnClass = e.target.className;
+  btnClass === "mod" ? modRecord(e) : delRecord(e);
 }
 
 // 수정
 function modRecord(e) {
+  // 기록 버튼 사라지고 수정 버튼 보이기 (input type button)
   const id = e.target.parentElement.id;
+  const btn = document.querySelector("#recordBtn");
+  btn.classList.add("hidden");
+  const modBtn = document.querySelector("#modBtn");
+  modBtn.classList.remove("hidden");
+
   console.log(id);
 
+  // 수정할 내용 textarea, input창에 보이기
   const answer = recordArr.filter((item) => item.id === Number(id));
   recordArea.value = answer[0].text;
   recordSource.value = answer[0].source;
+  hiddenId.innerText = answer[0].id;
 
-  const btn = document.querySelector("#recordBtn");
+  // 기록 버튼을 누르면 수정한다.
+  // 객체로 접근 > 변경 > 다시 출력
+  modBtn.addEventListener("click", modText);
+}
+
+// 텍스트 수정 > 로컬스토리지 수정
+function modText(e) {
+  e.preventDefault();
+  // 원본 불러오기
+  // 텍스트 수정
+  const id = hiddenId.innerText;
+  recordArr.forEach((item) => {
+    if (item.id === Number(id)) {
+      item.text = recordArea.value;
+      item.source = recordSource.value;
+      item.date = item.date;
+      item.id = item.id;
+    }
+  });
+  setRecord();
+  location.assign("index.html");
 }
 
 // 삭제
@@ -85,9 +122,3 @@ function delRecord(e) {
 }
 
 recordForm.addEventListener("submit", saveRecord);
-const getRecord = JSON.parse(localStorage.getItem("record"));
-
-if (getRecord !== null) {
-  recordArr = getRecord;
-  getRecord.forEach(seeRecord);
-}

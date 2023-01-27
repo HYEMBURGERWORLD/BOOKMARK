@@ -10,7 +10,7 @@
 <body>
   <nav>
     <h1>bookmark</h1>
-    <span id="greetingSpan"></span>
+    <h2 id="greetingSpan"></h2>
     <div id="loginBox">
       <form id="loginForm">
         <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
@@ -22,14 +22,16 @@
   </nav>
 
   <main>
-    <article>
+    <article class="hidden" id="record">
       <section>
         <form action="" id="recordForm">
           <label for="recordArea">인상깊은 구절을 남기세요 : </label>
           <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
           <div class="btnBox"><!--여기에 width값주고-->
             <input type="text" id="recordSource" placeholder="책이름" autocomplete="off" required /> <!--부모요소 width 값의 ~%씩-->
+            <span class="hidden" id="recordId"></span>
             <button id="recordBtn">기록</button>
+            <input type="button" class="hidden" id="modBtn" value="수정">
           </div>
         </form>
       </section>

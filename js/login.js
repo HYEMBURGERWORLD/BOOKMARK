@@ -11,11 +11,14 @@ function login(e) {
   const users = JSON.parse(localStorage.getItem("user"));
 
   if (users.id === id.value && users.pw === pw.value) {
-    const span = document.querySelector("#greetingSpan");
+    const h2 = document.querySelector("#greetingSpan");
     const loginBox = document.querySelector("#loginBox");
+    const record = document.querySelector("#record");
 
     loginBox.classList.add("hidden");
-    span.innerText = `${users.name}님 반가워요!`;
+    h2.innerText = `${users.name}님 반가워요!`;
+
+    record.classList.remove("hidden");
   } else {
     const answer =
       users.id !== id.value ? "아이디가 없습니다" : "비밀번호를 확인하세요";
