@@ -12,20 +12,17 @@ const user = JSON.parse(localStorage.getItem("user"));
 const PASSID_KEY = "사용하실 수 있습니다.";
 const PASSPW_KEY = "비밀번호 확인 완료!";
 
-//onload date select option value 표시
-window.onload = function () {
-  for (let i = 1; i <= 12; i++) {
-    let m = document.createElement("option");
+for (let i = 1; i <= 12; i++) {
+  let m = document.createElement("option");
 
-    if (i < 10) {
-      m.innerText = "0" + i;
-      m.value = "0" + i;
-    } else {
-      m.innerText = i;
-      m.value = i;
-    }
-    month.appendChild(m);
+  if (i < 10) {
+    m.innerText = "0" + i;
+    m.value = "0" + i;
+  } else {
+    m.innerText = i;
+    m.value = i;
   }
+  month.appendChild(m);
 
   let lastDay = 31;
   for (let j = 1; j <= lastDay; j++) {
@@ -39,7 +36,7 @@ window.onload = function () {
     }
     day.appendChild(d);
   }
-};
+}
 
 // id 중복체크
 function checkId() {

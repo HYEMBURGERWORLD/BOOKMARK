@@ -9,7 +9,7 @@ let recordArr = [];
 const getRecord = JSON.parse(localStorage.getItem("record"));
 if (getRecord !== null) {
   recordArr = getRecord;
-  getRecord.forEach(seeRecord);
+  recordArr.forEach(seeRecord);
 }
 
 // 저장
@@ -64,13 +64,10 @@ function seeRecord(recordValue) {
     newLi.appendChild(button);
     button.classList.add(text);
 
-    button.addEventListener("click", whatBtn);
+    button.addEventListener("click", (e) => {
+      button.className === "mod" ? modRecord(e) : delRecord(e);
+    });
   });
-}
-
-function whatBtn(e) {
-  const btnClass = e.target.className;
-  btnClass === "mod" ? modRecord(e) : delRecord(e);
 }
 
 // 수정
@@ -97,7 +94,7 @@ function modRecord(e) {
 
 // 텍스트 수정 > 로컬스토리지 수정
 function modText(e) {
-  e.preventDefault();
+  //e.preventDefault();
   // 원본 불러오기
   // 텍스트 수정
   const id = hiddenId.innerText;
@@ -110,7 +107,9 @@ function modText(e) {
     }
   });
   setRecord();
-  location.assign("index.html");
+  // location.reload();
+  // 갑자기 새로고침 후 로그인이 풀리는 문제 발생
+  // 기능은 정상적으로 작동하지만 계속 로그인을 해줘야 함 > 해결할 것
 }
 
 // 삭제
