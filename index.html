@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
+  <header>
     <h1>bookmark</h1>
     <h2 id="greetingSpan"></h2>
     <div id="loginBox">
@@ -19,10 +19,12 @@
       </form>
       <a href="signup.html">회원가입</a>
     </div>
-  </nav>
+  </header>
 
   <main>
-    <article class="hidden" id="record">
+    <section class="hidden" id="record">
+
+      <!--게시물 등록-->
       <section>
         <form action="" id="recordForm">
           <label for="recordArea">인상깊은 구절을 남기세요 : </label>
@@ -35,11 +37,14 @@
           </div>
         </form>
       </section>
-  
-      <section>
+
+      <!--게시물 출력-->
+      <article>
+        <h2>북마크목록(임시)</h2>
         <ul id="recordList"></ul>
-      </section>
-    </article>
+      </article>
+
+    </section>
   </main>
 
   <script type="text/javascript" src="js/login.js"></script>
