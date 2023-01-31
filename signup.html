@@ -4,42 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signUp.css">
   <title>회원가입페이지</title>
 </head>
 <body>
   <main>
-
-    <form action="" id="userForm">
-      <div class="">
-        <label for="userId">아이디</label>
-        <input type="text" id="userId" minlength="4" maxlength="8" placeholder="최소4자 최대8자" autocomplete="off" required />
-        <span id="checkId"></span>
-      </div>
-  
-      <div class="">
-        <label for="userPw">비밀번호</label>
-        <input type="text" id="userPw" minlength="6" placeholder="최소6자" autocomplete="off" required />
-      </div>
-  
-      <div class="">
-        <label for="userPw">비밀번호확인</label>
-        <input type="text" id="userPwCheck" minlength="6" placeholder="한 번 더 입력하세요!" autocomplete="off" required />
-        <span id="checkPw"></span>
-      </div>
-  
-      <div class="">
-        <label for="userName">닉네임</label>
-        <input type="text" id="userName" maxlength="8" placeholder="최대8자" autocomplete="off" required />
-      </div>
-  
-      <div class="">
-        <span>생일</span>
-        <select name="" id="userBirthMonth"><!--option js 추가--></select><label for="userBirthMonth">월</label>
-        <select name="" id="userBirthDay"><!--option js 추가--></select><label for="userBirthDay">일</label>
-      </div>
-  
-      <button>회원가입</button>
-    </form>
+    <div class="formBox">
+      <h1>회원가입</h1>
+      <form action="" id="userForm">
+        <div class="infoBox">
+          <label for="userId">아이디 :</label>
+          <input type="text" id="userId" minlength="4" maxlength="8" placeholder="최소4자 최대8자" autocomplete="off" required />
+          <div class="checkBox">
+            <span id="checkId"></span>
+          </div>
+        </div>
+    
+        <div class="infoBox">
+          <label for="userPw">비밀번호 :</label>
+          <input type="text" id="userPw" minlength="6" placeholder="최소6자" autocomplete="off" required />
+        </div>
+    
+        <div class="infoBox">
+          <label for="userPw">비밀번호확인 :</label>
+          <input type="text" id="userPwCheck" minlength="6" placeholder="한 번 더 입력하세요!" autocomplete="off" required />
+          <div class="checkBox">
+            <span id="checkPw"></span>
+          </div>
+        </div>
+    
+        <div class="infoBox">
+          <label for="userName">닉네임 :</label>
+          <input type="text" id="userName" maxlength="8" placeholder="최대8자" autocomplete="off" required />
+        </div>
+    
+        <div class="infoBox">
+          <span>생일</span>
+          <select name="" id="userBirthMonth"><!--option js 추가--></select><label for="userBirthMonth">월</label>
+          <select name="" id="userBirthDay"><!--option js 추가--></select><label for="userBirthDay">일</label>
+        </div>
+    
+        <div class="infoBox">
+          <button>회원가입</button>
+        </div>
+      </form>
+    </div>
 
   </main>
 

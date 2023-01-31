@@ -6,19 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>welcome to my bookmark !!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <header>
     <h1>bookmark</h1>
     <h2 id="greetingSpan"></h2>
-    <div id="loginBox">
-      <form id="loginForm">
+
+    <div class="loginBox columnFlex" id="loginBox">
+      <form class="loginForm columnFlex w100" id="loginForm">
+        <h2>로그인</h2>
         <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
         <input type="text" id="pwInput" placeholder="비밀번호" autocomplete="off" />
-        <button>로그인</button>
+        <div class="btnBox">
+          <button>로그인</button>
+        </div>
+        <div class="linkBox">
+          <a href="signup.html">회원가입</a>
+        </div>
       </form>
-      <a href="signup.html">회원가입</a>
     </div>
+
   </header>
 
   <main>
@@ -39,10 +47,10 @@
       </section>
 
       <!--게시물 출력-->
-      <article>
+      <section>
         <h2>북마크목록(임시)</h2>
         <ul id="recordList"></ul>
-      </article>
+      </section>
 
     </section>
   </main>

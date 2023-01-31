@@ -107,6 +107,8 @@ function modText(e) {
     }
   });
   setRecord();
+  recordArea.value = "";
+  recordSource.value = "";
   // location.reload();
   // 갑자기 새로고침 후 로그인이 풀리는 문제 발생
   // 기능은 정상적으로 작동하지만 계속 로그인을 해줘야 함 > 해결할 것

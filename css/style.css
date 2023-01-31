@@ -1,9 +1,20 @@
-.hidden {
-  display: none;
+
+/*
+<memo>
+백그라운드 색상을 파도가 아주 작게 넘실거리는 느낌으로 움직이게 만들고 싶다.
+모든 정보가 작성되면 회원가입 / 로그인 버튼이 활성화되는 것처럼 색상 생기게 하고 싶다.
+*/
+
+:root {
+  --off-color: rgb(225, 225, 225);
+  --on-color: rgb(115, 141, 186);
 }
 
-.block {
-  display: block;
+
+/* 공통css */
+
+.hidden {
+  display: none;
 }
 
 textarea {
@@ -11,6 +22,11 @@ textarea {
   padding: 10px;
 }
 
-label {
-  display: block;
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
+
+
+/* index */

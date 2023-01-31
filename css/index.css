@@ -1,0 +1,69 @@
+/* login */
+
+
+.columnFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.loginBox {
+  width: 20%;
+  padding: 80px 50px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border: var(--off-color) 1px solid;
+}
+
+.loginBox input {
+  padding: 15px 10px;
+  border-style: none;
+  border-bottom-style: solid;
+}
+
+.loginBox input:focus {
+  outline: none;
+  border-color: var(--on-color);
+}
+
+.btnBox {
+  width: 50%;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.btnBox button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--off-color);
+  border-radius: 20px;
+  border-style: none;
+}
+
+.btnBox button:hover {
+  background-color: var(--on-color);
+}
+
+.linkBox {
+  margin: 0 auto;
+}
+
+a:link,
+a:visited,
+a:focus {
+  font-size: 11pt;
+  text-decoration: none;
+  color: var(--off-color);
+}
+
+a:hover {
+  color: var(--on-color);
+}
+
+
+/* record */

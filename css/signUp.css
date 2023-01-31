@@ -1,0 +1,22 @@
+
+/* sign up */
+main {
+  width: 50%;
+  text-align: center;
+}
+
+.formBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.infoBox label {
+  text-align: justify;
+}
