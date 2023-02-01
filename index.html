@@ -9,39 +9,46 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <header>
+  <!--로그인 후 보이는 header-->
+  <header class="hidden">
     <h1>bookmark</h1>
-    <h2 id="greetingSpan"></h2>
-
-    <div class="loginBox columnFlex" id="loginBox">
-      <form class="loginForm columnFlex w100" id="loginForm">
-        <h2>로그인</h2>
-        <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
-        <input type="text" id="pwInput" placeholder="비밀번호" autocomplete="off" />
-        <div class="btnBox">
-          <button>로그인</button>
-        </div>
-        <div class="linkBox">
-          <a href="signup.html">회원가입</a>
-        </div>
-      </form>
-    </div>
-
+    <div class="">
+        <h2 id="greetingSpan"></h2>
+        <a href="">로그아웃</a>
+      </div>
   </header>
+  
+  <!--로그인-->
+  <div class="loginBox" id="loginBox">
+    <form class="loginForm" id="loginForm">
+      <h2>로그인</h2>
+      <input type="text" id="idInput" placeholder="아이디" autocomplete="off" />
+      <input type="text" id="pwInput" placeholder="비밀번호" autocomplete="off" />
+      <div class="loginBtnBox">
+        <button>로그인</button>
+      </div>
+      <div class="linkBox">
+        <a href="signup.html">회원가입</a>
+      </div>
+    </form>
+  </div>
 
+  <!--게시물-->
   <main>
-    <section class="hidden" id="record">
+    <section class="hidden recordWrap" id="record">
 
       <!--게시물 등록-->
-      <section>
-        <form action="" id="recordForm">
-          <label for="recordArea">인상깊은 구절을 남기세요 : </label>
-          <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
-          <div class="btnBox"><!--여기에 width값주고-->
-            <input type="text" id="recordSource" placeholder="책이름" autocomplete="off" required /> <!--부모요소 width 값의 ~%씩-->
+      <section class="recordBox">
+        <form action="" id="recordForm" class="recordForm">
+          <div class="">
+            <label for="recordArea"><b>기록할 내용 :</b></label>
+            <textarea name="" id="recordArea" cols="45" rows="10" resize="none" placeholder="당신을 울린 문장은 무엇인가요 ..." required></textarea>
+          </div>
+          <div class="btnBox">
+            <input type="text" class="author" id="recordSource" placeholder="책이름" autocomplete="off" required />
             <span class="hidden" id="recordId"></span>
-            <button id="recordBtn">기록</button>
-            <input type="button" class="hidden" id="modBtn" value="수정">
+            <button class="recordBtn" id="recordBtn">기록</button>
+            <input type="button" class="hidden recordBtn" id="modBtn" value="수정">
           </div>
         </form>
       </section>
@@ -49,7 +56,7 @@
       <!--게시물 출력-->
       <section>
         <h2>북마크목록(임시)</h2>
-        <ul id="recordList"></ul>
+        <ul id="recordList" class="recordList"></ul>
       </section>
 
     </section>

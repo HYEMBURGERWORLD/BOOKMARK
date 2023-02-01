@@ -14,11 +14,14 @@ function login(e) {
     const h2 = document.querySelector("#greetingSpan");
     const loginBox = document.querySelector("#loginBox");
     const record = document.querySelector("#record");
+    const header = document.querySelector("header");
 
+    loginBox.classList.remove("loginBox", "columnFlex");
     loginBox.classList.add("hidden");
     h2.innerText = `${users.name}님 반가워요!`;
 
     record.classList.remove("hidden");
+    header.classList.remove("hidden");
   } else {
     const answer =
       users.id !== id.value ? "아이디가 없습니다" : "비밀번호를 확인하세요";
