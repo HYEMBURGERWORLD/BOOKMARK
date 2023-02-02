@@ -2,14 +2,24 @@ const recordForm = document.querySelector("#recordForm");
 const recordArea = document.querySelector("#recordArea");
 const recordSource = document.querySelector("#recordSource");
 const hiddenId = document.querySelector("#recordId");
+const msg = document.querySelector(".emptyMsg");
 
 let recordArr = [];
 
 // 로컬스토리지가 비어있지 않다면! 바로 출력한다.
 const getRecord = JSON.parse(localStorage.getItem("record"));
 if (getRecord !== null) {
+  seeMsg();
   recordArr = getRecord;
   recordArr.forEach(seeRecord);
+}
+
+function seeMsg() {
+  if (getRecord.length === 0) {
+    msg.classList.remove("hidden");
+  } else {
+    msg.classList.add("hidden");
+  }
 }
 
 // 저장
@@ -37,6 +47,7 @@ function saveRecord(e) {
 // 같은 게 두 번 쓰여서 function으로 뺐다.
 function setRecord() {
   localStorage.setItem("record", JSON.stringify(recordArr));
+  seeMsg();
 }
 
 // 보기

@@ -1,5 +1,15 @@
-/* login */
+/*header*/
+header {
+  color: var(--off-color);
+}
 
+header a,
+header h2 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* login */
 .loginBox {
   width: 20%;
   height: 100%;
@@ -9,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .loginBox h2 {
@@ -48,30 +58,10 @@
 .loginBtnBox button {
   width: 100%;
   padding: 10px;
-  background-color: var(--off-color);
-  border-radius: 20px;
-  border-style: none;
-}
-
-.loginBtnBox button:hover {
-  background-color: var(--on-color);
 }
 
 .linkBox {
   margin: 0 auto;
-}
-
-a:link,
-a:visited,
-a:focus {
-  font-size: 11pt;
-  text-decoration: none;
-  color: var(--off-color);
-}
-
-a:hover {
-  color: var(--on-color);
-  text-decoration: underline;
 }
 
 /* record */
@@ -100,6 +90,7 @@ main {
   display: block;
   padding: 10px 0;
   font-size: 12pt;
+  color: var(--off-color);
 }
 
 .btnBox {
@@ -113,21 +104,31 @@ main {
   padding: 5px 10px;
 }
 
+.author {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.author::placeholder {
+  color:rgb(255, 255, 255);
+}
+
 .author:focus {
   outline: none;
 }
 
-.recordBtn {
-  background-color: var(--off-color);
-  border: none;
-  border-radius: 2px;
+/*list*/
+.emptyMsg {
+  font-size: 30pt;
+  font-style: italic;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 40px;
+  opacity: 50%;
+  user-select: none;
 }
-
-.recordBtn:hover {
-  background-color: var(--on-color);
-}
-
-/**/
 
 .recordList {
   padding: 30px 0;
@@ -137,13 +138,19 @@ main {
 .recordList li {
   background-color: rgba(255,255,255,.6);
   width: 50%;
-  padding: 10px 20px;
+  padding: 10px 20px 20px 20px;
   margin: 10px auto;
   text-align: justify;
+  border-radius: 10px;
 }
 
-.recordList p {
-  display: inline-block;
+.recordList span {
+  font-size: 10pt;
+  margin-right: 10px;
+}
+
+.recordList button {
+  margin-right: 5px;
 }
 
 /* animation */
