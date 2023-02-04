@@ -33,6 +33,8 @@ body {
   background: #355C7D;  /* fallback for old browsers */
   background: -webkit-linear-gradient(45deg, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(45deg, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: moveColor 6s infinite;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 }
 
 
@@ -71,3 +73,13 @@ a:hover {
 
 /* 공통 애니메이션 */
 /* 아주~ 천천히 백그라운드 컬러 변경*/
+@keyframes moveColor {
+  50% {
+  background: -webkit-linear-gradient(45deg, #355C7D, #C06C84, #6C5B7B);
+  background: linear-gradient(45deg, #355C7D, #C06C84, #6C5B7B);
+  }
+  100% {
+  background: -webkit-linear-gradient(45deg, #6C5B7B, #355C7D, #C06C84);
+  background: linear-gradient(45deg, #6C5B7B, #355C7D, #C06C84); 
+  }
+}

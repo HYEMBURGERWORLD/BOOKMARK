@@ -4,6 +4,9 @@ const recordSource = document.querySelector("#recordSource");
 const hiddenId = document.querySelector("#recordId");
 const msg = document.querySelector(".emptyMsg");
 
+const recordBtn = document.querySelector("#recordBtn");
+const modBtn = document.querySelector("#modBtn");
+
 let recordArr = [];
 
 // 로컬스토리지가 비어있지 않다면! 바로 출력한다.
@@ -85,12 +88,9 @@ function seeRecord(recordValue) {
 function modRecord(e) {
   // 기록 버튼 사라지고 수정 버튼 보이기 (input type button)
   const id = e.target.parentElement.id;
-  const btn = document.querySelector("#recordBtn");
-  btn.classList.add("hidden");
-  const modBtn = document.querySelector("#modBtn");
-  modBtn.classList.remove("hidden");
 
-  console.log(id);
+  recordBtn.classList.add("hidden");
+  modBtn.classList.remove("hidden");
 
   // 수정할 내용 textarea, input창에 보이기
   const answer = recordArr.filter((item) => item.id === Number(id));
@@ -117,12 +117,20 @@ function modText(e) {
       item.id = item.id;
     }
   });
+
   setRecord();
+
+  const li = document.getElementById(`${id}`);
+  const p = li.firstElementChild;
+  p.innerText = recordArea.value;
+  const span = p.nextSibling;
+  span.innerText = recordSource.value;
+
   recordArea.value = "";
   recordSource.value = "";
-  // location.reload();
-  // 갑자기 새로고침 후 로그인이 풀리는 문제 발생
-  // 기능은 정상적으로 작동하지만 계속 로그인을 해줘야 함 > 해결할 것
+
+  recordBtn.classList.remove("hidden");
+  modBtn.classList.add("hidden");
 }
 
 // 삭제

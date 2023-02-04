@@ -23,19 +23,18 @@ for (let i = 1; i <= 12; i++) {
     m.value = i;
   }
   month.appendChild(m);
+}
 
-  let lastDay = 31;
-  for (let j = 1; j <= lastDay; j++) {
-    let d = document.createElement("option");
-    if (j < 10) {
-      d.innerText = "0" + j;
-      d.value = "0" + j;
-    } else {
-      d.innerText = j;
-      d.value = j;
-    }
-    day.appendChild(d);
+for (let j = 1; j <= 31; j++) {
+  let d = document.createElement("option");
+  if (j < 10) {
+    d.innerText = "0" + j;
+    d.value = "0" + j;
+  } else {
+    d.innerText = j;
+    d.value = j;
   }
+  day.appendChild(d);
 }
 
 // id 중복체크
